@@ -1,5 +1,5 @@
 {
-  "name": "wedding_guest_app",
+  "name": "guest_management_app",
   "version": "1.0.0",
   "description": "Application to manage wedding guest ",
   "main": "index.js",
