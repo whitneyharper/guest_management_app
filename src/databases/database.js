@@ -13,6 +13,5 @@ const db = {
   };
 
 db.models.Guest = require('../models/guest') (sequelize);
-db.models.Table = require('../models/table') (sequelize);
 
 module.exports = db;
