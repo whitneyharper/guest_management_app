@@ -1,19 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const { viewAllGuests, createGuest, viewGuest } = require('../controllers/guestsControllers');
+const { viewAllGuests, createGuest, viewGuest, updateGuest } = require('../controllers/guestsControllers');
 
 //GET ROUTE TO VIEW ALL GUESTS
-router.get('/view', viewAllGuests);
-//GET ROUTE TO VIEW GUESTS ENTRY BY PARAMS
-router.get('/view/guests', );
-//GET ROUTE TO VIEW ONE GUEST ENTRY 
-router.get('/view/one', viewGuest)
+router.get('/', viewAllGuests);
+//GET ROUTE TO VIEW ONE GUEST ENTRY BY QUERY
+router.get('/one', viewGuest)
 //POST ROUTE TO CREATE A NEW GUEST ENTRY
-router.post('/add', createGuest);
+router.post('/', createGuest);
 // UPDATE ROUTE TO UPDATE A GUEST ENTRY
-router.put('/update/:id',);
+router.put('/:id', updateGuest);
 // DELETE ROUTE TO DELETE A GUEST ENTRY
-router.delete('/delete/:id',)
+router.delete('/:id',)
 
 
 module.exports = router;
