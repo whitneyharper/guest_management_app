@@ -1,32 +1,8 @@
 //const Sequelize = require('sequelize');
+const { models } = require('../databases/database');
 const db = require('../databases/database');
 const { Guest } = db.models;
 const {Op} = db.sequelize;
-
-// async IIFE
-/*(async () => {
-    // Sync all tables
-    await db.sequelize.sync({ force: true });
-
-    try {
-        // Instance of the Guest class represents a database row
-        const guest = await Guest.create({
-            first_name: 'Lucinia',
-            last_name: 'Plummer',
-            rsvp: 'No',
-            rsvp_date: null,
-        });
-        console.log(guest.toJSON());
-    } catch (error) {
-        if (error.name === 'SequelizeValidationError') {
-            const errors = error.errors.map(err => err.message);
-            console.error('Validation errors: ', errors);
-        } else {
-            throw error;
-        }
-    }
-}) ();*/
-
 
 // FUNCTION TO VIEW ALL GUESTS
 exports.viewAllGuests = async(req, res) => {
@@ -38,13 +14,12 @@ exports.viewAllGuests = async(req, res) => {
     }
 };
 
-//FUNCTION TO VIEW SINGLE ENTRY BY FIRST NAME AND LAST NAME 
+//FUNCTION TO VIEW SINGLE ENTRY BY ID
 exports.viewGuest = async(req, res) => {
     try{
         const guest = await Guest.findOne({
             where: {
-                first_name : req.body.first_name,  
-                last_name : req.body.last_name
+                id: req.params.id,  
             }
         });
         if(!guest) {
@@ -78,15 +53,16 @@ exports.createGuest = async(req, res) => {
 
 exports.updateGuest = async(req, res) => {
     try{
-        const guest = await Guest.update(req.body, {
-            where: {
-                id: req.params.id
-            }
+        const guestId = req.params.id;
+        const updated = await models.Guest.update(req.body, {
+            where: { id: guestId }
         });
-        if(!guest) {
-            return res.status(404).json({message: 'Guest no found'});
+        if (updated) {
+            const updatedGuest = await models.Guest.findOne({ where: {id: guestId } });
+            return res.status(200).json({ guest: updatedGuest})
+        } else {
+            return res.status(404).json({message: "Guest not found"});
         }
-        return res.status(200).json({message: 'Guest entry is updated', guest});
     } catch (err) {
         if(err) {
             console.log(err);

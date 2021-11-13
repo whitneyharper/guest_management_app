@@ -5,7 +5,7 @@ const { viewAllGuests, createGuest, viewGuest, updateGuest } = require('../contr
 //GET ROUTE TO VIEW ALL GUESTS
 router.get('/', viewAllGuests);
 //GET ROUTE TO VIEW ONE GUEST ENTRY BY QUERY
-router.get('/one', viewGuest)
+router.get('/:id', viewGuest)
 //POST ROUTE TO CREATE A NEW GUEST ENTRY
 router.post('/', createGuest);
 // UPDATE ROUTE TO UPDATE A GUEST ENTRY
