@@ -15,8 +15,6 @@ app.use(express.urlencoded({ extended: true }));
 //REQUIRE ROUTES
 const guestsRoutes = require('./src/routes/guestsRoutes');
 
-//SETUP DATABASE
-//dbSetup();
 
 app.use('/guests', guestsRoutes);
 

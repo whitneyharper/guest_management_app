@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { viewAllGuests, createGuest, viewGuest, updateGuest } = require('../controllers/guestsControllers');
+const { viewAllGuests, createGuest, viewGuest, updateGuest, deleteGuest } = require('../controllers/guestsControllers');
 
 //GET ROUTE TO VIEW ALL GUESTS
 router.get('/', viewAllGuests);
@@ -11,7 +11,7 @@ router.post('/', createGuest);
 // UPDATE ROUTE TO UPDATE A GUEST ENTRY
 router.put('/:id', updateGuest);
 // DELETE ROUTE TO DELETE A GUEST ENTRY
-router.delete('/:id',)
+router.delete('/:id', deleteGuest)
 
 
 module.exports = router;
