@@ -16,11 +16,6 @@ Finished Features
  
 Features in Development 
 
-* Create new guest entry
-* Fetch all existing guests
-* Fetch a single guest
-* Update a guest entry
-* Delete a guest entry from the database
 * Fetch guests within a specific query
 * User sign-up
 * User login
