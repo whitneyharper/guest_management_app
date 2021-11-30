@@ -39,7 +39,7 @@ Features in Development
 ## Authors
 
 * Whitney Harper  
-* https://www.linkedin.com/in/whitney-harper-37724179/
+* https://www.linkedin.com/in/whitney-h-37724179/
 
 ## 🤝 Support
 
