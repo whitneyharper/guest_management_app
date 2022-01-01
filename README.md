@@ -16,11 +16,6 @@ Finished Features
  
 Features in Development 
 
-* Create new guest entry
-* Fetch all existing guests
-* Fetch a single guest
-* Update a guest entry
-* Delete a guest entry from the database
 * Fetch guests within a specific query
 * User sign-up
 * User login
@@ -44,7 +39,7 @@ Features in Development
 ## Authors
 
 * Whitney Harper  
-* https://www.linkedin.com/in/whitney-harper-37724179/
+* https://www.linkedin.com/in/whitney-h-37724179/
 
 ## 🤝 Support
 
